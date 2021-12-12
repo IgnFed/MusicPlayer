@@ -1,0 +1,94 @@
+header.main_content{
+  display: grid;
+  grid-template-rows: 6rem 1fr;
+  flex: 1;
+}
+
+div.searcher_container{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+input#searcher{
+  background-color: #fff;
+  transition: outline .15s linear;
+  border-radius: 7px;
+  padding: .75rem;
+  min-width: 45%;
+}
+input#searcher:focus{
+  outline: 2px solid #63a2dd;
+}
+
+section.musics_container{
+  height: fit-content;
+  max-height: 370px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  padding: .5rem 0;
+}
+::-webkit-scrollbar{
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #6afc87c5;
+}
+
+article#card{
+  margin: 0 .5rem;
+  display: grid;
+  width: 95%;
+  grid-template-columns: .1fr repeat(5, 1fr) .2fr;
+  gap: .3rem;
+  padding: .5rem;
+  background: #0404047e;
+  transition: outline .15s linear;
+}
+article#card:hover{
+  outline: 2px solid #63a2dd;
+}
+
+article#card section{
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+article#card section span{
+  font-size: 14px;
+}
+section.edit_section input{
+  width: 1.7rem;
+  height: 1.7rem;
+  cursor: pointer;
+}
+
+section.opts_section ul.opt_list{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer#player{
+  display: flex;
+  height: 100%;
+  padding: 0 .5rem;
+  margin: 1rem 0;
+  flex-direction: column;
+  gap: .5rem;
+}
+footer#player div{
+  width: 100%;
+  text-align: center;
+  font-size: .75em;
+}
+div.player_opts ul.opts_list{
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

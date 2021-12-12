@@ -1,0 +1,28 @@
+header.left_side__logo_container{
+  margin: .5rem 1rem;
+}
+
+header.left_side__logo_container a#logo{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+ul.left_side__pages_list{
+  display: block;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+li.pages_list__link{
+  background-color: transparent;
+  margin: 1rem 0;
+  padding-left: 1rem;
+  transition: background-color .1s linear;
+}
+li.pages_list__link:hover{
+  background-color: #fdaffa4a;
+  color: #fff;
+}
+li.pages_list__link a{
+  line-height: 2;
+}
