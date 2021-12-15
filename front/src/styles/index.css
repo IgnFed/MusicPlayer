@@ -1,0 +1,98 @@
+body, *, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.17rem;
+}
+
+html{
+  width: 100vw;
+  height: 100vh;
+}
+body{
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  color: #a99f9f;
+}
+
+
+input, button{
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+span, p{
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+li{
+  list-style: none;
+}
+a, button{
+  cursor: pointer;
+}
+a, a:visited{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+div#root{
+  display: inline;
+  overflow: auto;
+}
+
+span.text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+div#app_grid{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: 
+    "side-bar main"
+    "side-bar main"
+  ;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+}
+
+aside#left_side{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-area: side-bar;
+  background-color: #222;
+  min-width: 275px;
+}
+main#right_side{
+  display: flex;
+  flex-direction: column;
+  grid-area: main;
+  background-color: #555;
+}
+
+svg.icon{
+  width: 40px;
+  height: 40px;
+}
