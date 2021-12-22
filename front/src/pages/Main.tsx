@@ -6,6 +6,7 @@ const Player = lazy(()=> import('@components/Player'));
 
 export default function Main(){
 
+  
   return(
     <main id={`right_side`}>
       <header className={`${s.main_content}`}>
@@ -13,25 +14,9 @@ export default function Main(){
           <input type="text" id={`${s.searcher}`}/>
         </div>
         <section className={`${s.musics_container}`}>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
-          <Card CSSRef={s}/>
+          <Card CSSRef={s} src={"http://localhost:3001/api/movies/def"}/>
+          <Card CSSRef={s} src={"http://localhost:3001/api/movies/eighty_six"}/>
+          <Card CSSRef={s} src={"http://localhost:3001/api/movies/eighty_six.mp3"}/>
         </section>
       </header>
 

@@ -1,14 +1,19 @@
 import { LinkItem } from '@components/index';
+import { IMusicContextValues, useMusicCtx } from '@src/utils/context/MusicCtx';
 
 export default function Card<P extends {CSSRef?:CSSModuleClasses; isInList?:boolean | undefined}>({
   CSSRef,
-  isInList
-}:P){
+  isInList,
+  src=''
+}:P & any){
+
+  const { musics, currentMusic, showRef } = useMusicCtx();
+
 
   return(
-    <article id={`${CSSRef?.card || ''}`}>
-      
-      <section className={`${CSSRef?.edit_section || ''}`}>
+    <article id={`${CSSRef?.card || ''}`} onClick={showRef}>
+      <audio src={src} ref={currentMusic}></audio>
+      <section className={`${CSSRef?.edit_section || ''}`} >
         <input type="checkbox" />
       </section>
       
