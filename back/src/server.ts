@@ -7,7 +7,7 @@ export default class Server{
   private app:Application;
   private port?:number | string;
   private paths = {
-    movies: '/api/movies',
+    musics: '/api/musics',
   }
 
   constructor(port?:number){
@@ -18,7 +18,7 @@ export default class Server{
   }
 
   routes(){
-    this.app.use(this.paths.movies, moviesRouter);
+    this.app.use(this.paths.musics, moviesRouter);
   }
 
   middlewares(){
@@ -29,7 +29,7 @@ export default class Server{
 
   listen(){
     this.app.listen(this.port, ()=>{
-      console.log(`Listening on port: http://localhost:${this.port}/api/movies`);
+      console.log(`Listening on port: http://localhost:${this.port}/api/musics`);
     })
   }
 }

@@ -1,4 +1,4 @@
-import { useContext, useState, createContext, useRef, Ref, MouseEvent, MutableRefObject, RefObject } from "react";
+import { useContext, useState, createContext, useRef, MouseEvent } from "react";
 import { IMusic } from '@utils/interfaces';
 
 export interface IMusicContextValues{
