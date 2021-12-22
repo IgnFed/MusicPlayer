@@ -1,4 +1,5 @@
 export default interface IMusic{
   name:string,
-  artist?:string,
+  type:string,
+  path:string
 }
