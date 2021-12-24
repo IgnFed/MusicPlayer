@@ -6,7 +6,7 @@ import MusicLogo from '@public/MusicPlayerLogoWithe.svg';
 export default function AsideNavBar(){
 
   return(
-    <aside id={`left_side`}>
+    <>
       <header className={`${s.left_side__logo_container}`}>
         <a href={`#`} id={`${s.logo}`} >
           <img src={`${MusicLogo}`} alt="" />
@@ -46,6 +46,6 @@ export default function AsideNavBar(){
         </LinkItem>
 
       </ul>
-    </aside>
+    </>
   )
 }
