@@ -13,8 +13,6 @@ export default class Server{
   constructor(port?:number){
     this.app = express();
     this.port = port || process.env.port || 3001;
-    this.middlewares();
-    this.routes();
   }
 
   routes(){
@@ -28,6 +26,8 @@ export default class Server{
   }
 
   listen(){
+    this.middlewares();
+    this.routes();
     this.app.listen(this.port, ()=>{
       console.log(`Listening on port: http://localhost:${this.port}/api/musics`);
     })

@@ -6,7 +6,7 @@ import getFileNameWithoutExtension from "./getFileNameWithoutExtension";
 
 export default function():Array<IMusic>{
 
-  const EXCLUDE_FILES_BY_EXTENSIONS = ['.json'];
+  // const EXCLUDE_FILES_BY_EXTENSIONS = ['.json'];
   const allowedFiles:Array<IMusic> = [];
   const pathToMusics = join(__dirname, '../musics/')
   const files = readdirSync(pathToMusics);
