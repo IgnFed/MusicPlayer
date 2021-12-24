@@ -1,0 +1,37 @@
+section.top,
+section.mid,
+section.bot{
+  margin-bottom: .5rem;
+}
+
+section.top,
+section.mid{
+  border-bottom: 1px solid #444;
+}
+
+div.cardsContainer,
+div.playerContainer{
+  margin: 0 .5rem;
+}
+
+section.top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.inputContainer{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+input#searcher{
+  background-color: #111;
+  color: #fff;
+  padding: .2rem .5rem;
+  font-size: .8em;
+  border-radius: 3px;
+}
+
+section.mid{
+  overflow-y: auto;
+}

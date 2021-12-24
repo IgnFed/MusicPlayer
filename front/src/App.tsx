@@ -11,7 +11,9 @@ export default function App(){
         <AsideNavBar/>
       </aside>
       <main id={"right_side"}>
-        <Main />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Main />
+        </Suspense>
       </main>
     </div>
   );
