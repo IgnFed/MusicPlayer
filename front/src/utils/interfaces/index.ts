@@ -1,3 +1,3 @@
 import IMusic from "./IMusic";
 
-export { IMusic }
+export type { IMusic }

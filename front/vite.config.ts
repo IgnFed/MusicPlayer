@@ -13,6 +13,7 @@ export default defineConfig({
       {find: '@styles', replacement:path.resolve(__dirname, './src/styles')},
       {find: '@components', replacement:path.resolve(__dirname, './src/components')},
       {find: '@public', replacement:path.resolve(__dirname, './src/public')},
+      {find: '@hooks', replacement:path.resolve(__dirname, './src/hooks')},
       // {find: '@interfaces', replacement:path.resolve(__dirname, './src/utils/interfaces')},
       // {find: '@types', replacement:path.resolve(__dirname, './src/utils/types')},
       // {find: '@functions', replacement:path.resolve(__dirname, './src/utils/functions')},

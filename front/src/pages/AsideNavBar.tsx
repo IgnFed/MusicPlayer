@@ -29,22 +29,6 @@ export default function AsideNavBar(){
           <span>Home</span>
         </LinkItem>
 
-        <LinkItem 
-          liTag={{
-            CSSReference:s,
-            classNameList: ["pages_list__link"],
-            id: "lists",
-          }}
-          aTag={{
-            to:"#",
-            isReact:false,
-            CSSReference: s,
-          }}
-
-        >
-          <span>Lists</span>
-        </LinkItem>
-
       </ul>
     </>
   )

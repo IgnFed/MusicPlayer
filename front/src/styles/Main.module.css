@@ -1,24 +1,11 @@
-section.top,
-section.mid,
-section.bot{
-  margin-bottom: .5rem;
-}
 
-section.top,
-section.mid{
-  border-bottom: 1px solid #444;
-}
-
-div.cardsContainer,
-div.playerContainer{
-  margin: 0 .5rem;
-  height: 100%;
-}
 
 /*INPUT*/
 
 section.top{
   display: flex;
+  padding: .5rem 0;
+  border-bottom: 1px solid #444;
   align-items: center;
   justify-content: center;
 }
@@ -42,3 +29,31 @@ section.mid{
   overflow-y: auto;
 }
 
+div.cardsContainer,
+div.playerContainer{
+  margin: 0 .5rem;
+  height: 100%;
+}
+header.songPlay{
+  
+}
+article.card{
+  display: flex;
+  gap: 1.5rem;
+  min-width: 170px;
+  padding: .3rem;
+  margin: 1rem 0;
+  word-wrap: break-word;
+  background-color: #fff;
+}
+
+article.card > *{
+  align-self: center;
+  line-height: 10px;
+  width: max-content; height: max-content;
+  flex: .5;
+}
+
+footer.songName{
+  flex: 4;
+}

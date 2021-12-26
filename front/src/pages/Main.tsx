@@ -1,8 +1,20 @@
 import { Input, MusicCard } from "@components/index";
+import { useMusicCtx } from "@src/utils/context/MusicPlayContext";
+import { IMusic } from "@src/utils/interfaces";
 import s from '@styles/Main.module.css';
+import { useEffect } from "react";
 
 export default function Main():JSX.Element {
 
+
+  const { musics, setMusics, play, currentPlaying } = useMusicCtx();
+
+  useEffect(()=>{
+    
+    fetch('http://localhost:3001/api/musics')
+      .then(res => res.json())
+      .then(res => {setMusics((prev:IMusic[]) => ( [...res.musics] ) )})
+  }, []);
   return (
     <>
       <section className={`${s.top}`}>
@@ -37,7 +49,11 @@ export default function Main():JSX.Element {
 
       <section className={`${s.mid}`}>
         <div className={`${s.cardsContainer}`}>
-          <MusicCard />
+          {
+            musics.map((v,k)=>(
+              <MusicCard key={k} CSSReference={s} name={v.name} classNameList={["card"]} handleClick={play} />
+            ))
+          }
         </div>
       </section>
     </>
