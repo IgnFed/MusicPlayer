@@ -7,7 +7,7 @@ import { existFile } from '../middlewares/movies.middlewares';
 const route = Router();
 
 route.get('/', getAllMovies);
-// route.get('/:name', existFile, getMoiveByName);
+route.get('/:name', existFile, getMoiveByName);
 
 
 export default route;
