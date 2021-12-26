@@ -34,8 +34,9 @@ div.playerContainer{
   margin: 0 .5rem;
   height: 100%;
 }
-header.songPlay{
-  
+header.songPlay img{
+  width: 45px;
+  height: 45px;
 }
 article.card{
   display: flex;
