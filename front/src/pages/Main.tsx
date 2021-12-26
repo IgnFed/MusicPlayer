@@ -1,4 +1,4 @@
-import { Input, MusicCard, Player } from "@components/index";
+import { Input, MusicCard } from "@components/index";
 import s from '@styles/Main.module.css';
 
 export default function Main():JSX.Element {
@@ -38,12 +38,6 @@ export default function Main():JSX.Element {
       <section className={`${s.mid}`}>
         <div className={`${s.cardsContainer}`}>
           <MusicCard />
-        </div>
-      </section>
-
-      <section className={`${s.bot}`}>
-        <div className={`${s.playerContainer}`}>
-          <Player />
         </div>
       </section>
     </>

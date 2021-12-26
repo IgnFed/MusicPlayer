@@ -12,13 +12,17 @@ section.mid{
 div.cardsContainer,
 div.playerContainer{
   margin: 0 .5rem;
+  height: 100%;
 }
+
+/*INPUT*/
 
 section.top{
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 div.inputContainer{
   display: flex;
   align-items: center;
@@ -32,6 +36,9 @@ input#searcher{
   border-radius: 3px;
 }
 
+/*CARDS*/
+
 section.mid{
   overflow-y: auto;
 }
+

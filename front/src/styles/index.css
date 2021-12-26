@@ -84,8 +84,9 @@ aside#left_side{
   min-width: 275px;
 }
 main#right_side{
-  display: grid;
-  grid-template-rows: 60px 1fr 60px;
+  display: flex;
+  flex-direction: column;
+  /* grid-template-rows: 60px 1fr 60px; */
   grid-area: main;
   background-color: #555;
 }
