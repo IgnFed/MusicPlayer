@@ -7,14 +7,10 @@ import { useEffect } from "react";
 export default function Main():JSX.Element {
 
 
-  const { musics, setMusics, play, currentPlaying } = useMusicCtx();
+  const { musics, fnSetMusics, play } = useMusicCtx();
 
-  useEffect(()=>{
-    
-    fetch('http://localhost:3001/api/musics')
-      .then(res => res.json())
-      .then(res => {setMusics((prev:IMusic[]) => ( [...res.musics] ) )})
-  }, []);
+  fnSetMusics();
+  
   return (
     <>
       <section className={`${s.top}`}>
