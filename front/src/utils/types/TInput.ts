@@ -1,4 +1,4 @@
-import { HTMLInputTypeAttribute } from 'react';
+import { ChangeEvent, HTMLInputTypeAttribute } from 'react';
 import { TPropsExtra } from './index';
 
 export type TInput = {
@@ -17,6 +17,11 @@ export type TInput = {
     attrs?:{
       type?: HTMLInputTypeAttribute,
       name?: string,
+      value?:string,
+      placeholder?:string,
+    },
+    events?:{
+      onChange?:((e?:ChangeEvent<HTMLInputElement>)=>void);
     }
     // attrs?: InputHTMLAttributes<HTMLElement>    
   }

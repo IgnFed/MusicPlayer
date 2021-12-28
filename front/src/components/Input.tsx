@@ -25,8 +25,11 @@ export default function Input<T extends TInput>({
       <input 
         type={input?.attrs?.type || 'text'} 
         name={input?.attrs?.name || ""}
+        value = {input?.attrs?.value || '' }
+        placeholder={input?.attrs?.placeholder || "Search Something..."}
         className={`${dynamicCSSClassList(input?.cssProps.CSSReference, input?.cssProps.classNameList)}`}  
         id={inputId}
+        onChange={input?.events?.onChange || undefined}
       />
 
     {

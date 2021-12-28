@@ -9,12 +9,14 @@ interface HTMLArticleElement extends HTMLElement{}
 
 export interface IMusicContext{
   musics: Array<IMusic>,
+  musicFilter: Array<IMusic>,
   currentPlaying: any,
   currentPlayingIcon: any,
   musicIsPlaying: ()=>boolean,
   setIsPlaying: any,
   play:()=>void,
-  fnSetMusics: ((musicUrl?:string)=>void);
+  fnSetMusicFilter: ((str:string)=>void),
+  fnSetMusics: ((musicUrl?:string)=>void),
   // setMuicsList: ()=>void,
 }
 
@@ -24,10 +26,17 @@ export function useMusicCtx(){ return useContext(MusicIsPlayingContext);}
 
 export function MusicProvider(props:any){
   const [musics, setMusics] = useState<IMusic[]>([]);
+  const [ musicFilter, setMusicFilter ] = useState<IMusic[]>([]);
   const [ isPlaying , setIsPlaying ] = useState(false);
   const currentPlaying = useRef<HTMLElement | null>(null);
   const currentPlayingIcon = useRef<HTMLImageElement | null>(null);
   const defaultMusicUrl = 'http://localhost:3001/api/musics';
+
+  function fnSetMusicFilter(str:string):void{
+    if(!musics.length) return;
+    setMusicFilter((prev:IMusic[])=> [
+      ...musics.filter((music)=> music.name!.includes(str))])
+  }
 
   function fnSetMusics(musicUrl?:string):void{
     useEffect(()=>{
@@ -110,7 +119,9 @@ export function MusicProvider(props:any){
     play,
     musicIsPlaying,
     musics,
+    musicFilter,
     fnSetMusics,
+    fnSetMusicFilter,
     setIsPlaying,
     currentPlayingIcon    // setMuicsList,
 

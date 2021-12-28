@@ -1,10 +1,10 @@
-import { useState, createContext, useContext, MouseEvent } from 'react';
+import { useState, createContext, useContext, ChangeEvent } from 'react';
 import { TProps } from '@utils/types';
 
 
 interface IContextValue{
   value:string,
-  onChange:((e?:MouseEvent<HTMLInputElement>)=>void),
+  onChange:((e?:ChangeEvent<HTMLInputElement>)=>void),
 }
 const InputContext = createContext<IContextValue>({} as IContextValue);
 
@@ -14,7 +14,7 @@ export function InputContextProvider<ChildrenProps extends TProps>({children}:Ch
 
   const [ value, setValue ] = useState("");
 
-  function onChange(e?:MouseEvent<HTMLInputElement>):void{
+  function onChange(e?:ChangeEvent<HTMLInputElement>):void{
     setValue(e?.currentTarget.value || '');
   }
 
