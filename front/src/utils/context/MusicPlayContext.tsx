@@ -1,4 +1,4 @@
-import { useContext, useState, useRef, createContext, Ref, MouseEvent, SetStateAction} from 'react';
+import { useContext, useState, useRef, createContext, Ref, MouseEvent, SetStateAction, useEffect} from 'react';
 import LogoPlay from '@public/VideoLogo.svg';
 import LogoPause from '@public/VideoLogoPause.svg';
 import { IMusic } from '@utils/interfaces';
@@ -14,7 +14,7 @@ export interface IMusicContext{
   musicIsPlaying: ()=>boolean,
   setIsPlaying: any,
   play:()=>void,
-  setMusics: any;
+  fnSetMusics: ((musicUrl?:string)=>void);
   // setMuicsList: ()=>void,
 }
 
@@ -27,6 +27,16 @@ export function MusicProvider(props:any){
   const [ isPlaying , setIsPlaying ] = useState(false);
   const currentPlaying = useRef<HTMLElement | null>(null);
   const currentPlayingIcon = useRef<HTMLImageElement | null>(null);
+  const defaultMusicUrl = 'http://localhost:3001/api/musics';
+
+  function fnSetMusics(musicUrl?:string):void{
+    useEffect(()=>{
+    
+      fetch(musicUrl || defaultMusicUrl)
+        .then(res => res.json())
+        .then(res => {setMusics((prev:IMusic[]) => ( [...res.musics] ) )})
+    }, []);
+  }
 
   function musicIsPlaying(){
     return isPlaying;
@@ -100,7 +110,7 @@ export function MusicProvider(props:any){
     play,
     musicIsPlaying,
     musics,
-    setMusics,
+    fnSetMusics,
     setIsPlaying,
     currentPlayingIcon    // setMuicsList,
 
